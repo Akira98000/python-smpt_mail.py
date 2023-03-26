@@ -1,51 +1,54 @@
-## GitHub API endpoint
-api_url = 'https://api.github.com/repos/<username>/<repository>/readme'
 
-## GitHub credentials
-auth = ('<username>', '<personal_access_token>')
+# Python SMTP Mail Sender
 
-## Markdown content
-markdown = """
-## My Awesome Project
+## Le fonctionnement du programme
 
-Welcome to my awesome project! This project is awesome because it does awesome things.
+Le programme utilise le module smtplib pour créer une session SMTP avec un serveur de messagerie 
+(smtp.gmail.com dans ce cas). Ensuite, il s'authentifie en utilisant l'adresse email et le mot de passe du destinataire. 
+Il crée un objet message avec une en-tête, un corps et des pièces jointes éventuelles à l'aide des modules email.mime.text et 
+email.mime.multipart.
+
+Une fois que le message est prêt, 
+le programme utilise la méthode sendmail() de l'objet SMTP pour envoyer 
+le message à l'adresse email du destinataire spécifiée. En cas de succès, 
+il affiche un message confirmant l'envoi du courrier.
+
+En résumé, ce programme utilise le protocole SMTP pour établir une 
+connexion avec un serveur de messagerie, s'authentifier en utilisant les informations 
+d'identification du destinataire et envoyer un message électronique à l'aide de la méthode sendmail().
 
 ## Installation
 
-To install this project, run the following command:
+Soit cloner le projet
 
-pip install my_awesome_project
+```bash
+   git clone https://github.com/Akira98000/python-smpt_mail.py.git
+```
+    
+Soit télécharger le fichier depuis ce lien:
 
-## Usage
+https://github.com/Akira98000/python-smpt_mail.py
 
-To use this project, simply import it in your Python code:
 
-```python
-import my_awesome_project
 
-my_awesome_project.do_awesome_things()
+## License
 
-## Contributing
-If you'd like to contribute to this project, please fork the repository and submit a pull request. Thanks for your help!
-"""
+La licence [MIT](https://choosealicense.com/licenses/mit/) est une licence open source permissive qui permet à quiconque d'utiliser, modifier et distribuer librement le code sous licence, à condition que l'attribution de la licence soit conservée et que toute responsabilité en cas de problème soit déclinée.
 
-## Create payload for API request
-payload = {
-'message': 'Automatically generated README.md file',
-'content': b64encode(markdown.encode()).decode()
-}
 
-## Create API request headers
-headers = {
-'Content-Type': 'application/json',
-'Authorization': f'token {auth[1]}'
-}
 
-## Make API request to create README.md file
-response = requests.put(api_url, data=json.dumps(payload), headers=headers)
+## Authors
 
-## Check if API request was successful
-if response.status_code == 201:
-print('README.md file created successfully')
-else:
-print(f'Error creating README.md file: {response.json()["message"]}')
+- [@akirasanthakumaran](https://github.com/Akira98000) Développeur principal du projet.
+
+
+## Badges
+
+Badge de ce Dépot Git
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+[![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
+
+
+
+
+
