@@ -1,9 +1,5 @@
 ## Python smpt mail sender program on python 
 
-# Import library
-import requests
-import json
-
 ## GitHub API endpoint
 api_url = 'https://api.github.com/repos/<username>/<repository>/readme'
 
