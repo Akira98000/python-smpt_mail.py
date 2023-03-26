@@ -1,3 +1,6 @@
+## Python smpt mail sender program on python 
+
+# Import library
 import requests
 import json
 
